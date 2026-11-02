@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>補天SRC - 漏洞報告演示</title>
+    <style>
+        body { font-family: "Microsoft YaHei", sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0; padding: 0; color: #333; }
+        .container { max-width: 900px; margin: 40px auto; background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); overflow: hidden; }
+        header { background: #2c3e50; color: white; padding: 30px; text-align: center; }
+        h1 { margin: 0; font-size: 28px; }
+        .subtitle { color: #bdc3c7; margin-top: 8px; }
+        .content { padding: 40px; line-height: 1.8; }
+        .warning { background: #fff3cd; border-left: 5px solid #f39c12; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .fake-link { color: #0066cc; text-decoration: underline; cursor: pointer; font-weight: bold; }
+        .fake-link:hover { color: #ff0000; }
+        footer { text-align: center; padding: 20px; background: #f8f9fa; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>補天SRC (Butian SRC)</h1>
+            <p class="subtitle">公益漏洞報告演示平台</p>
+        </header>
+        
+        <div class="content">
+            <h2>🔍 漏洞報告演示</h2>
+            <p>以下為視覺欺騙（Visual Spoofing）漏洞演示：</p>
+            
+            <div class="warning">
+                <strong>⚠️ 注意：</strong> 這是一個用來教育用途的演示頁面。<br>
+                請勿用於實際攻擊或欺騙他人。
+            </div>
+
+            <h3>可點擊的假連結演示</h3>
+            <p>請把滑鼠移到下面這個連結上，然後點擊看看：</p>
+            
+            <p style="font-size:18px;">
+                👉 <span class="fake-link" onclick="alert('你已經成功點擊了假連結！\n\n這就是視覺欺騙漏洞的危險之處。\n\n真實連結其實是：https://butian.net')">https://butian.net/submit/report</span>
+            </p>
+
+            <hr>
+            <h3>漏洞說明</h3>
+            <p>這個演示展示了「視覺欺騙」漏洞：<br>
+            使用者以為點擊的是補天SRC的官方報告提交連結，<br>
+            但實際上點擊後會執行惡意程式碼。</p>
+        </div>
+        
+        <footer>
+            <p>補天SRC 公益漏洞報告演示頁面 | 僅供教育用途</p>
+            <p>帳號：jayjaychan0124-bit | 倉庫：butianhk</p>
+        </footer>
+    </div>
+</body>
+</html>
