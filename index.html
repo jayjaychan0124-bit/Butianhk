@@ -29,22 +29,22 @@
         }
         h1 { 
             margin: 0; 
-            font-size: 32px; 
+            font-size: 28px; 
         }
         .subtitle { 
             color: #bdc3c7; 
-            margin-top: 10px; 
-            font-size: 18px;
+            margin-top: 8px; 
+            font-size: 16px;
         }
         .content { 
-            padding: 40px; 
+            padding: 30px; 
         }
         .warning { 
             background: #fff3cd; 
-            border-left: 6px solid #f39c12; 
-            padding: 18px; 
-            margin: 25px 0; 
-            border-radius: 6px;
+            border-left: 5px solid #f39c12; 
+            padding: 15px; 
+            margin: 20px 0; 
+            border-radius: 4px;
             font-size: 15px;
         }
         .fake-link { 
@@ -59,7 +59,7 @@
         }
         footer { 
             text-align: center; 
-            padding: 25px; 
+            padding: 20px; 
             background: #f8f9fa; 
             color: #666; 
             font-size: 14px;
@@ -86,5 +86,21 @@
             <p>請點擊下面的連結看看會發生什麼：</p>
             
             <p style="font-size:18px; margin: 25px 0;">
-                👉 <span class="fake-link" onclick="alert('你已經成功被欺騙了！\n\n這就是視覺欺騙漏洞的危險。\n\n你以為點擊的是補天官方連結，但實際上
+                👉 <span class="fake-link" onclick="alert('你已經成功被欺騙了！\n\n這就是視覺欺騙漏洞的危險。\n\n你以為點擊的是補天官方連結，但實際上執行了惡意程式碼。\n\n請提高警覺！')">https://butian.net/submit/report</span>
+            </p>
 
+            <hr style="margin: 30px 0;">
+            
+            <h3>漏洞原理說明</h3>
+            <p>攻擊者透過偽造連結外觀，讓使用者誤以為點擊的是正規網站，從而執行惡意操作。</p>
+            
+            <p style="color:#e74c3c; font-weight:bold;">這就是為什麼在真實環境中，我們不能只看連結顯示的文字就輕易點擊。</p>
+        </div>
+        
+        <footer>
+            <p>補天SRC 公益漏洞報告演示 | 僅供教育用途</p>
+            <p>倉庫：butianhk</p>
+        </footer>
+    </div>
+</body>
+</html>
