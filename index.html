@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>補天SRC - 漏洞報告演示</title>
+    <style>
+        body { 
+            font-family: "Microsoft YaHei", system-ui, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            margin: 0; 
+            padding: 20px; 
+            color: #333; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            background: white; 
+            border-radius: 16px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+            overflow: hidden;
+        }
+        header { 
+            background: #2c3e50; 
+            color: white; 
+            padding: 40px; 
+            text-align: center; 
+        }
+        h1 { 
+            margin: 0; 
+            font-size: 32px; 
+        }
+        .subtitle { 
+            color: #bdc3c7; 
+            margin-top: 10px; 
+            font-size: 18px;
+        }
+        .content { 
+            padding: 40px; 
+            line-height: 1.8;
+        }
+        .warning { 
+            background: #fff3cd; 
+            border-left: 6px solid #f39c12; 
+            padding: 20px; 
+            margin: 25px 0; 
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        .demo-link { 
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        footer { 
+            text-align: center; 
+            padding: 25px; 
+            background: #f8f9fa; 
+            color: #666; 
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>補天SRC (Butian SRC)</h1>
+            <p class="subtitle">公益漏洞報告演示平台</p>
+        </header>
+        
+        <div class="content">
+            <h2>✅ 這是成功的演示頁面</h2>
+            <p>如果您看到這個頁面，代表 GitHub Pages 已正確部署。</p>
+            
+            <div class="warning">
+                <strong>⚠️ 這是一個教育用途的演示頁面</strong><br>
+                用來展示「視覺欺騙」類型的漏洞風險。
+            </div>
+
+            <h3>演示連結：</h3>
+            <p style="font-size:18px;">
+                👉 <a href="#" onclick="alert('你點擊了看似正常的補天SRC連結\n\n但實際上執行了 JavaScript 程式碼！\n\n這就是視覺欺騙漏洞的危險性。\n\n請務必提高警覺！'); return false;" style="color:#0066cc; text-decoration:underline;">
+                https://butian.net/submit/report
+                </a>
+            </p>
+
+            <hr>
+            <p><strong>目前狀態：</strong> GitHub Pages 部署成功 ✅</p>
