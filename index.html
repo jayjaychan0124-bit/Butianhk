@@ -3,148 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>補天SRC | 漏洞提交平台</title>
+    <title>Chan | 新手白帽子學習歷程</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            min-height: 100vh;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
             padding: 20px;
+            min-height: 100vh;
+            color: #333;
         }
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 30px auto;
             background: white;
             border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
         }
         header {
-            background: linear-gradient(to right, #1e5799, #2989d8);
+            background: linear-gradient(to right, #2c3e50, #1a252f);
             color: white;
-            padding: 45px 30px;
+            padding: 50px 30px;
             text-align: center;
         }
-        h1 { font-size: 36px; margin-bottom: 8px; }
-        .official { 
-            font-size: 18px; 
-            opacity: 0.95; 
-            letter-spacing: 2px;
-        }
-        .status {
+        h1 { margin: 0; font-size: 38px; }
+        .subtitle { color: #a5b4c0; font-size: 18px; margin-top: 10px; }
+        .tag {
             display: inline-block;
-            background: #2ecc71;
+            background: #e74c3c;
             color: white;
-            padding: 6px 16px;
-            border-radius: 30px;
+            padding: 5px 14px;
+            border-radius: 20px;
             font-size: 14px;
             margin-top: 15px;
         }
-        .main {
-            padding: 50px 40px;
+        .section {
+            padding: 40px;
         }
-        .success-box {
-            background: linear-gradient(135deg, #d4edda, #c3e6cb);
-            border: 2px solid #2ecc71;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 40px;
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
         }
-        .report-form {
+        .demo-box {
             background: #f8f9fa;
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid #e9ecef;
-        }
-        .form-title {
-            text-align: center;
-            color: #1e5799;
-            margin-bottom: 30px;
-            font-size: 24px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 8px;
-            font-size: 16px;
         }
-        .submit-btn {
-            background: #e74c3c;
+        .btn {
+            display: inline-block;
+            background: #3498db;
             color: white;
-            padding: 16px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
+            padding: 12px 25px;
             border-radius: 8px;
-            width: 100%;
-            cursor: pointer;
-            transition: 0.3s;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
         }
-        .submit-btn:hover {
-            background: #c0392b;
-            transform: translateY(-2px);
-        }
-        .footer {
+        footer {
             text-align: center;
             padding: 25px;
-            background: #f1f1f1;
-            color: #555;
-            font-size: 15px;
+            background: #2c3e50;
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        .highlight {
+            background: #fffacd;
+            padding: 2px 6px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>補天安全信息共享平台</h1>
-            <p class="official">Butian SRC · 官方漏洞報告系統</p>
-            <div class="status">● 在線運行 · 已連接</div>
+            <h1>Chan</h1>
+            <p class="subtitle">網絡安全新手 · 白帽子學習者</p>
+            <div class="tag">目前階段：新手學習中</div>
         </header>
 
-        <div class="main">
-            <div class="success-box">
-                <h2>✅ 此網站為教育演示專案</h2>
-                <p style="margin:15px 0 0 0; font-size:17px;">
-                    用於展示「視覺欺騙漏洞」及「漏洞報告流程」<br>
-                    所有提交均為模擬效果，不會傳送到真實後台
-                </p>
-            </div>
-
-            <div class="report-form">
-                <h2 class="form-title">提交漏洞報告</h2>
-                
-                <input type="text" value="視覺欺騙漏洞 - 偽造補天官方提交頁面" readonly>
-                <input type="text" value=" jayjaychan0124-bit " readonly>
-                
-                <select>
-                    <option>視覺欺騙 (Visual Spoofing)</option>
-                    <option>釣魚攻擊</option>
-                    <option>XSS 跨站腳本</option>
-                </select>
-                
-                <textarea rows="6" readonly>發現攻擊者可透過精心設計的URL和視覺效果，誘導用戶誤以為自己正在訪問補天官方的「提交報告」頁面，實際上會執行惡意JavaScript程式碼，屬於典型的視覺欺騙漏洞。</textarea>
-                
-                <button onclick="submitDemo()" class="submit-btn">
-                    提交報告給補天SRC
-                </button>
+        <div class="section">
+            <h2>👋 關於我</h2>
+            <p>我是 Chan，目前正系統性地學習網絡安全知識，目標是成為一名合格的白帽子（漏洞研究員）。</p>
+            <p>雖然現在還是完全新手，但我會持續學習、做練習，並記錄整個成長過程。</p>
+            
+            <div class="demo-box">
+                <strong>目前學習重點：</strong> 視覺欺騙漏洞（Visual Spoofing）、XSS、資訊洩漏等常見 Web 漏洞。
             </div>
         </div>
 
-        <div class="footer">
-            <p>但天HK 網絡安全教育演示項目 | 2026年11月</p>
-            <p style="margin-top:8px; font-size:13px;">GitHub Pages • main branch • 部署成功</p>
+        <div class="section">
+            <h2>🧪 學習成果展示</h2>
+            <div class="demo-box">
+                <h3>✅ 視覺欺騙漏洞教育演示</h3>
+                <p>我製作了一個 GitHub Pages 網站，用來模擬補天SRC提交頁面，演示攻擊者如何利用視覺欺騙誘導用戶執行惡意程式碼。</p>
+                <a href="https://jayjaychan0124-bit.github.io/Butianhk/" target="_blank" class="btn">查看演示網站 →</a>
+            </div>
         </div>
+
+        <div class="section">
+            <h2>📚 學習計劃</h2>
+            <ul style="line-height:2.0; font-size:16px;">
+                <li>✅ 理解常見漏洞類型（已完成視覺欺騙）</li>
+                <li>🔄 深入學習 XSS 攻擊與防護</li>
+                <li>🔄 學習 Burp Suite 基本使用</li>
+                <li>🔄 研究真實漏洞報告寫法</li>
+                <li>⏳ 開始在補天SRC、Seebug 等平台觀察任務</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📬 聯繫我</h2>
+            <p>如果你也是新手，或願意分享學習經驗，歡迎與我交流！</p>
+            <p><strong>GitHub：</strong> jayjaychan0124-bit</p>
+            <p><strong>目前狀態：</strong> 積極學習中，歡迎指教</p>
+        </div>
+
+        <footer>
+            <p>此網站使用 GitHub Pages 部署｜持續更新中</p>
+            <p style="margin-top:10px;">2026 年 11 月 · 新手白帽子成長日誌</p>
+        </footer>
     </div>
-
-    <script>
-        function submitDemo() {
-            alert("✅ 報告提交成功！\n\n報告編號：BT-20261108-4782\n\n感謝您的貢獻！\n補天SRC安全團隊將在24小時內進行審核。\n\n（此為演示效果，並非真實提交）");
-        }
-    </script>
 </body>
 </html>
 
