@@ -3,55 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>補天SRC - 漏洞報告演示</title>
+    <title>補天SRC - 提交漏洞報告</title>
     <style>
-        body { 
-            font-family: "Microsoft YaHei", Arial, sans-serif; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-            margin: 0; padding: 0; 
+        body {
+            font-family: "Microsoft YaHei", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            margin: 0;
+            padding: 20px;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #333;
         }
-        .container { 
-            max-width: 800px; 
-            background: white; 
-            border-radius: 16px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
             overflow: hidden;
-            margin: 20px;
         }
-        header { 
-            background: #2c3e50; 
-            color: white; 
-            padding: 50px 30px; 
-            text-align: center; 
-        }
-        h1 { margin: 0; font-size: 36px; }
-        .subtitle { color: #bdc3c7; margin-top: 10px; font-size: 18px; }
-        .content { padding: 40px; line-height: 1.8; font-size: 17px; }
-        .success { 
-            background: #d4edda; 
-            color: #155724; 
-            padding: 25px; 
-            border-radius: 10px; 
+        header {
+            background: linear-gradient(to right, #0f2b52, #1e3c72);
+            color: white;
+            padding: 35px;
             text-align: center;
-            font-size: 19px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #a5c0e0;
+            margin-top: 8px;
+            font-size: 18px;
+        }
+        .form-area {
+            padding: 40px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .submit-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .submit-btn:hover {
+            background: #c0392b;
+        }
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
             margin: 20px 0;
+            font-size: 18px;
         }
-        .warning { 
-            background: #fff3cd; 
-            padding: 20px; 
-            border-left: 6px solid #f39c12; 
-            margin: 25px 0; 
-            border-radius: 4px;
+        .note {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 25px;
+            border-left: 5px solid #f39c12;
         }
-        footer { 
-            text-align: center; 
-            padding: 25px; 
-            background: #f1f1f1; 
-            color: #555; 
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            color: #666;
             font-size: 14px;
         }
     </style>
@@ -59,38 +105,90 @@
 <body>
     <div class="container">
         <header>
-            <h1>補天SRC (Butian SRC)</h1>
-            <p class="subtitle">公益漏洞報告演示平台</p>
+            <h1>補天安全信息共享平台</h1>
+            <p class="subtitle">Butian SRC · 漏洞提交系統</p>
         </header>
         
-        <div class="content">
-            <div class="success">
-                ✅ GitHub Pages 部署成功！<br>
-                這是正確的演示頁面
-            </div>
+        <div class="form-area">
+            <h2 style="text-align:center; color:#2c3e50; margin-bottom:30px;">提交漏洞報告</h2>
             
-            <h2>視覺欺騙漏洞 (Visual Spoofing) 演示</h2>
-            
-            <div class="warning">
-                <strong>⚠️ 重要提醒：</strong><br>
-                以下看似正常的連結，實際上會執行 JavaScript。<br>
-                這就是現實中常見的「視覺欺騙」攻擊手法。
+            <div id="successMessage" class="success-message">
+                ✅ 報告提交成功！<br><br>
+                感謝您的貢獻！<br>
+                我們的安全團隊將在 24 小時內審核您的報告。<br><br>
+                <strong>報告編號：BT-2026-1108-</strong><span id="randomNum">0000</span>
             </div>
 
-            <p style="font-size:20px; margin:35px 0; text-align:center;">
-                👉 <a href="#" onclick="alert('你已被欺騙！\n\n你以為自己點擊了補天官方的「提交報告」連結，\n但實際上執行了惡意 JavaScript。\n\n這就是視覺欺騙漏洞的危險性。\n\n請永遠提高警覺！'); return false;" style="color:#0066cc; text-decoration:underline; font-weight:bold;">
-                https://butian.net/submit/report
-                </a>
-            </p>
-            
-            <hr style="margin:30px 0;">
-            <p><strong>目前狀態：</strong> 頁面已透過 GitHub Pages 成功提供服務<br>
-               <strong>分支：</strong> main</p>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label>漏洞標題</label>
+                    <input type="text" value="視覺欺騙漏洞 - 假冒官方提交頁面" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>漏洞類型</label>
+                    <select required>
+                        <option value="">請選擇漏洞類型</option>
+                        <option value="视觉欺骗" selected>視覺欺騙 (Visual Spoofing)</option>
+                        <option value="釣魚攻擊">釣魚攻擊 (Phishing)</option>
+                        <option value="XSS">跨站腳本攻擊 (XSS)</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>漏洞描述</label>
+                    <textarea rows="6" required>發現補天官方提交頁面存在視覺欺騙漏洞。攻擊者可透過偽造URL和視覺效果誘導用戶點擊，實際執行惡意JavaScript程式碼。</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>影響等級</label>
+                    <select required>
+                        <option value="高危" selected>高危 (High)</option>
+                        <option value="中危">中危 (Medium)</option>
+                        <option value="低危">低危 (Low)</option>
+                    </select>
+                </div>
+                
+                <button type="button" onclick="submitReport()" class="submit-btn">
+                    提交報告
+                </button>
+            </form>
+
+            <div class="note">
+                <strong>注意：</strong> 此網站為教育演示用途，所有提交均為模擬操作，不會真的發送到補天SRC後台。
+            </div>
         </div>
         
         <footer>
-            <p>但天HK 教育演示專案 | 2026</p>
+            <p>但天HK 漏洞報告教育演示專案 | 2026 年 11 月</p>
+            <p style="margin-top:10px; font-size:13px;">目前部署分支：main | GitHub Pages 已成功運行</p>
         </footer>
     </div>
+
+    <script>
+        function submitReport() {
+            const successMsg = document.getElementById('successMessage');
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('randomNum').textContent = randomNum;
+            
+            successMsg.style.display = 'block';
+            document.getElementById('reportForm').style.display = 'none';
+            
+            // 3秒後自動滾動到成功訊息
+            setTimeout(() => {
+                successMsg.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }
+        
+        // 按下 Enter 鍵也能提交
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const form = document.getElementById('reportForm');
+                if (form.style.display !== 'none') submitReport();
+            }
+        });
+    </script>
 </body>
 </html>
+
